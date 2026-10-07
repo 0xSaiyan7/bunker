@@ -1,6 +1,4 @@
-"use client";
-
-import { CONTRACT_ADDRESS, PUMP_FUN_URL, X_URL } from "@/lib/constants";
+import { X_URL } from "@/lib/constants";
 
 const TICKER_ITEMS = [
   "BUNKER MODE ACTIVE",
@@ -12,10 +10,6 @@ const TICKER_ITEMS = [
   "THREAT WINDOW: MONTHS",
   "MAXIMUM DEFENSIVE POSTURE",
 ];
-
-function truncateCa(ca: string) {
-  return `${ca.slice(0, 8)}…${ca.slice(-8)}`;
-}
 
 export function Footer() {
   const ticker = [...TICKER_ITEMS, ...TICKER_ITEMS].join("   ◆   ");
@@ -34,26 +28,16 @@ export function Footer() {
       <div className="mx-auto flex max-w-4xl flex-col gap-6 px-4 py-10 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/40">
-            CA // {truncateCa(CONTRACT_ADDRESS)}
+            $BUNKER // OPS TERMINAL
           </p>
-          <div className="flex flex-wrap gap-4 font-mono text-[10px] uppercase tracking-[0.18em]">
-            <a
-              href={PUMP_FUN_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground/45 transition-colors hover:text-amber/90"
-            >
-              pump.fun
-            </a>
-            <a
-              href={X_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground/45 transition-colors hover:text-foreground/70"
-            >
-              x
-            </a>
-          </div>
+          <a
+            href={X_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-[10px] uppercase tracking-[0.18em] text-foreground/45 transition-colors hover:text-foreground/70"
+          >
+            x
+          </a>
         </div>
         <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-foreground/25">
           maximum defensive acceleration.

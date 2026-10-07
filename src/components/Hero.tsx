@@ -1,26 +1,6 @@
-"use client";
-
-import { useCallback, useState } from "react";
-import { CONTRACT_ADDRESS, PUMP_FUN_URL, X_URL } from "@/lib/constants";
-
-function truncateCa(ca: string) {
-  if (ca.length <= 16) return ca;
-  return `${ca.slice(0, 6)}…${ca.slice(-6)}`;
-}
+import { X_URL } from "@/lib/constants";
 
 export function Hero() {
-  const [copied, setCopied] = useState(false);
-
-  const copyCa = useCallback(async () => {
-    try {
-      await navigator.clipboard.writeText(CONTRACT_ADDRESS);
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2000);
-    } catch {
-      setCopied(false);
-    }
-  }, []);
-
   return (
     <section className="px-4 pt-28 pb-16 sm:px-6 sm:pt-32 sm:pb-24 lg:px-8">
       <div className="mx-auto max-w-4xl">
@@ -39,32 +19,7 @@ export function Hero() {
           move your bags to an address that has never signed a transaction
         </p>
 
-        <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-          <button
-            type="button"
-            onClick={copyCa}
-            className="panel-steel group flex w-full min-w-0 items-center justify-between gap-3 rounded-sm px-4 py-3 text-left transition-colors hover:border-amber/25 sm:w-auto sm:min-w-[280px]"
-          >
-            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/40">
-              Contract
-            </span>
-            <span className="truncate font-mono text-xs tracking-wide text-foreground/75">
-              {truncateCa(CONTRACT_ADDRESS)}
-            </span>
-            <span className="font-mono text-[10px] uppercase tracking-widest text-amber/80">
-              {copied ? "Copied" : "Copy"}
-            </span>
-          </button>
-
-          <a
-            href={PUMP_FUN_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex w-full items-center justify-center rounded-sm border border-amber/35 bg-amber/[0.08] px-6 py-3 font-mono text-[11px] uppercase tracking-[0.2em] text-amber transition-colors hover:bg-amber/[0.14] sm:w-auto"
-          >
-            Buy on pump.fun
-          </a>
-
+        <div className="mt-10">
           <a
             href={X_URL}
             target="_blank"

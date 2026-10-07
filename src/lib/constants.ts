@@ -1,9 +1,4 @@
-export const CONTRACT_ADDRESS =
-  "7kB9xR2mN4pQ8vW1yZ3aH6cF0dE5gJ8uL2nM9oP4qR7sT1vX";
-
-export const PUMP_FUN_URL = "https://pump.fun/coin/7kB9xR2mN4pQ8vW1yZ3aH6cF0dE5gJ8uL2nM9oP4qR7sT1vX";
-
-export const X_URL = "https://x.com/bunker_mode";
+export const X_URL = "https://x.com/BunkerPF";
 
 export const THREAT_LOG_LINES = [
   "scanning curve params...",
